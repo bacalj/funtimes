@@ -1,0 +1,27 @@
+{
+  "name": "funtimes",
+  "version": "1.0.0",
+  "description": "Fun Times with Times Fun",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bacalj/funtimes.git"
+  },
+  "keywords": [
+    "Fun",
+    "Times"
+  ],
+  "author": "Joe Bacal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bacalj/funtimes/issues"
+  },
+  "homepage": "https://github.com/bacalj/funtimes#readme",
+  "dependencies": {
+    "bulma": "^0.6.1",
+    "node-sass": "^4.7.2"
+  }
+}
