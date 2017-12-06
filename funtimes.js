@@ -5,8 +5,15 @@ var funtimes = new Vue({
         setA: [],
         setB: [],
         problems: [],
-        answer: "",
+        factorA: 0,
+        factorB: 0,
         responseEmoji: "🤔"
+    },
+
+    computed: {
+        answer: function(){
+            return this.factorA * this.factorB;
+        }
     },
 
     methods: {
@@ -16,6 +23,16 @@ var funtimes = new Vue({
 
         practice(){
             this.mode = 'practice';
+            for (var i = 0; i < this.setA.length; i++) {
+                var factorA = this.setA[i];
+                for (var k=0; k < this.setB.length; k++){
+                    var prob = {};
+                    prob.factor1 = this.setA[i];
+                    prob.factor2 = this.setB[k];
+                    prob.showProduct = false;
+                    this.problems.push(prob);
+                }
+            }
         },
 
         toggleInSet: function(num, set){

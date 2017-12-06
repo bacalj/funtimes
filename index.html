@@ -32,7 +32,7 @@
                         </div><!--end tabs -->
                         <!-- <transition name="fade"> -->
                             <div v-if="mode === 'setup'" class="setup-area">
-                                <div class="first-factor-selector buttons has-addons">
+                                <div class="first-factor-selector">
                                     <div class="choose-factor-note"> I would like to practice multiplying each of these</br></div>
                                     <div class="buttons factor-a has-addons">
                                         <span @click="toggleInSet(0, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(0) > -1 }">0</span>
@@ -51,7 +51,7 @@
                                     </div>
                                 </div>
                                         
-                                <div class="second-factor-selector buttons has-addons">
+                                <div class="second-factor-selector">
                                     <div class="choose-factor-note">by each of these</br></div>
                                     <div class="buttons factor-b has-addons">
                                         <span @click="toggleInSet(0, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(0) > -1 }">0</span>
@@ -73,7 +73,12 @@
                         <!-- </transition> -->
                         <!-- <transition name="fade"> -->
                             <div v-if="mode === 'practice'" class="practice-area">
-                                practice area
+                                <span class="factor1">{{factorA}}</span>
+                                <span class="times">&times;</span>
+                                <span class="factor2">{{factorB}}</span>  
+                                <span class="equals">=</span>
+                                <span class="answer">{{answer}}</span>
+                                <div class="response">{{responseEmoji}}</div>
                             </div>
                         <!-- </transition> -->
                     </div>
