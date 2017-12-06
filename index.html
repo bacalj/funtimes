@@ -4,18 +4,31 @@
 		<meta charset="utf-8">
 		<title>Fun Times</title>
         <script src="https://unpkg.com/vue"></script>
-		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
     </head>
     
     <body>
         <section class="section">
             <div class="container">
                 <h1 class="title">Fun Times</h1>
-                <div id="funtimes">
-                <!-- start app -->
-                    {{foo}}
-                <!-- end app -->
-                </div>
+                <div id="funtimes"><!-- start app -->
+                
+                    <div class="tabs is-boxed"><!-- start tabs -->
+                        <ul>
+                            <li class="is-active"><a>
+                                <span class="icon is-small"><i class="fa fa-gear"></i></span>
+                                <span>Setup</span>
+                            </a></li>
+                            <li><a>
+                                <span class="icon is-small"><i class="fa fa-play"></i></span>
+                                <span>Practice</span>
+                            </a></li>
+                        </ul>
+                    </div><!--end tabs -->
+                
+                </div><!-- end app -->
             </div>
         </section>
         <script src="funtimes.js" charset="utf-8"></script>
