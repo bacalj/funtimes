@@ -12,23 +12,37 @@
     <body>
         <section class="section">
             <div class="container">
-                <h1 class="title">Fun Times</h1>
-                <div id="funtimes"><!-- start app -->
-                
-                    <div class="tabs is-boxed"><!-- start tabs -->
-                        <ul>
-                            <li class="is-active"><a>
-                                <span class="icon is-small"><i class="fa fa-gear"></i></span>
-                                <span>Setup</span>
-                            </a></li>
-                            <li><a>
-                                <span class="icon is-small"><i class="fa fa-play"></i></span>
-                                <span>Practice</span>
-                            </a></li>
-                        </ul>
-                    </div><!--end tabs -->
-                
-                </div><!-- end app -->
+                <h1 class="title has-text-centered">Fun Times!</h1>
+                <div class="columns" id="funtimes">
+                    <div class="column is-2 left-sidebar">
+                    </div>
+
+                    <div class="column">
+                        <div class="tabs is-boxed"><!-- start tabs -->
+                            <ul>
+                                <li @click="setUpMode()" :class="{ 'is-active' : mode === 'setup' }"><a>
+                                    <span class="icon is-small"><i class="fa fa-gear"></i></span>
+                                    <span>Setup</span>
+                                </a></li>
+                                <li @click="practiceMode()" :class="{ 'is-active' : mode === 'practice' }"><a>
+                                    <span class="icon is-small"><i class="fa fa-play"></i></span>
+                                    <span>Practice</span>
+                                </a></li>
+                            </ul>
+                        </div><!--end tabs -->
+
+                        <div v-if="mode === 'setup'" class="setup-area">
+                            setup area
+                        </div>
+
+                        <div v-else class="practice-area">
+                            practice area
+                        </div>
+                    </div>
+
+                    <div class="column is-2 right-sidebar">
+                    </div>
+                </div>             
             </div>
         </section>
         <script src="funtimes.js" charset="utf-8"></script>

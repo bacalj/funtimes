@@ -1,6 +1,16 @@
 var funtimes = new Vue({
     el: '#funtimes',
     data: {
-        foo: 'bar'
+        mode: 'setup'
+    },
+
+    methods: {
+        setUpMode(){ 
+            this.mode = 'setup';
+        },
+
+        practiceMode(){
+            this.mode = 'practice';
+        }
     }
 });
