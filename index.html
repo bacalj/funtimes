@@ -35,8 +35,10 @@
                                 <div class="first-factor-selector buttons has-addons">
                                     <div class="choose-factor-note"> I would like to practice multiplying each of these</br></div>
                                     <div class="buttons factor-a has-addons">
-                                        <span class="button">0</span>
-                                        <span class="button">1</span>
+                                        <span @click="toggleInSet(0, setA)" class="button">0</span>
+                                        <span @click="toggleInSet(1, setA)" class="button">1</span>
+                                        <span @click="toggleInSet(2, setA)" class="button">2</span>
+                                        {{setA}}
                                     </div>
                                 </div>
                                         

@@ -3,7 +3,10 @@ var funtimes = new Vue({
     data: {
         mode: 'setup',
         setA: [],
-        setB: []
+        setB: [],
+        problems: [],
+        answer: "",
+        responseEmoji: "🤔"
     },
 
     methods: {
@@ -13,6 +16,15 @@ var funtimes = new Vue({
 
         practice(){
             this.mode = 'practice';
+        },
+
+        toggleInSet: function(num, set){
+            indS = set.indexOf(num);
+            if ( indS > -1 ){
+                set.splice(indS, 1);
+            } else {
+                set.push(num);
+            }
         }
     }
 });
