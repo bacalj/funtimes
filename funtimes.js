@@ -2,7 +2,8 @@ var funtimes = new Vue({
     el: '#funtimes',
     data: {
         mode: 'setup',
-
+        setA: [],
+        setB: []
     },
 
     methods: {

@@ -5,3 +5,8 @@
 
 // 3. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
+
+// 4. the styling
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
