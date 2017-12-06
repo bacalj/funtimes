@@ -18,14 +18,14 @@
                     </div>
 
                     <div class="column">
-                        <div class="tabs is-boxed"><!-- start tabs -->
+                        <div class="tabs is-toggle is-toggle-rounded is-fullwidth"><!-- start tabs -->
                             <ul>
-                                <li @click="setUpMode()" :class="{ 'is-active' : mode === 'setup' }"><a>
-                                    <span class="icon is-small"><i class="fa fa-gear"></i></span>
+                                <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }"><a>
+                                    <span class="icon"><i class="fa fa-gear"></i></span>
                                     <span>Setup</span>
                                 </a></li>
-                                <li @click="practiceMode()" :class="{ 'is-active' : mode === 'practice' }"><a>
-                                    <span class="icon is-small"><i class="fa fa-play"></i></span>
+                                <li @click="practice()" :class="{ 'is-active' : mode === 'practice' }"><a>
+                                    <span class="icon"><i class="fa fa-play"></i></span>
                                     <span>Practice</span>
                                 </a></li>
                             </ul>
