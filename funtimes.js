@@ -84,6 +84,10 @@ var funtimes = new Vue({
             }
         },
 
+        shuffle(){
+            this.problems.sort(() => Math.random() * 2 - 1);
+        },
+
         resetPracticeArea(){
             this.responseEmoji = "🤔";
             this.answer = "";

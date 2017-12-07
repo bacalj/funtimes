@@ -12,13 +12,13 @@
     <body>
         <section class="section">
             <div class="container">
-                <h1 class="title has-text-centered">Fun Times!</h1>
+                <h1 class="title">Fun Times!</h1>
                 <div class="columns has-text-centered" id="funtimes">
                     <div class="column is-1 left-sidebar">
                     </div>
 
                     <div class="column">
-                        <div class="tabs is-toggle is-centered"><!-- start tabs -->
+                        <div class="tabs is-toggle"><!-- start tabs -->
                             <ul>
                                 <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }"><a>
                                     <span class="icon"><i class="fa fa-gear"></i></span>
@@ -80,11 +80,12 @@
                                 <!-- <span class="answer">{{problems[currProbIndex].product}}</span> -->
                                 <input @keyup="check()" v-model="answer" type="text" class="answer" id="theanswer" placeholder="__">
                                 <div class="response">{{responseEmoji}}</div>
+                            </div>
 
-                                <div class="controls">
+                            <div class="controls">
                                     <span @click="indexDown()" class="button indexdown"><</span>
-                                    <span @click="indexUp()" class="button indexup">></span>
-                                </div>
+                                    <span @click="indexUp()" class="button indexup">></span><br>
+                                    <span @click="shuffle" class="button shuffle"></span>
                             </div>
 
                             <div class="error">

@@ -6479,3 +6479,13 @@ li.is-active a {
 
 .button.is-primary {
   background-image: linear-gradient(to bottom, #387CA1 0%, #330867 100%); }
+
+.answer {
+  font-size: 70px;
+  width: 130px;
+  height: 100px;
+  border: 0px;
+  color: #4a4a4a; }
+
+.answer:focus {
+  outline: none; }
