@@ -2,11 +2,13 @@ var funtimes = new Vue({
     el: '#funtimes',
     data: {
         mode: 'setup',
-        setA: [],
-        setB: [],
+        setA: [0, 1, 2],
+        setB: [1, 2, 3],
         problems: [],
         currProbIndex: 0,
-        responseEmoji: "🤔"
+        responseEmoji: "🤔",
+        answer:'',
+        errorMessage:'foo'
     },
 
     computed: {
@@ -21,16 +23,22 @@ var funtimes = new Vue({
         },
 
         practice(){
-            this.mode = 'practice';
-            for (var i = 0; i < this.setA.length; i++) {
-                var factorA = this.setA[i];
-                for (var k=0; k < this.setB.length; k++){
-                    var prob = {};
-                    prob.factor1 = this.setA[i];
-                    prob.factor2 = this.setB[k];
-                    prob.showProduct = false;
-                    prob.product = prob.factor1 * prob.factor2;
-                    this.problems.push(prob);
+            if (this.setA.length < 1 || this.setB.length < 1 ){
+                this.errorMessage = 'Hey, you need to choose at least one factor to practice from each list';
+            } 
+            
+            else {
+                this.mode = 'practice';
+                for (var i = 0; i < this.setA.length; i++) {
+                    var factorA = this.setA[i];
+                    for (var k=0; k < this.setB.length; k++){
+                        var prob = {};
+                        prob.factor1 = this.setA[i];
+                        prob.factor2 = this.setB[k];
+                        prob.showProduct = false;
+                        prob.product = prob.factor1 * prob.factor2;
+                        this.problems.push(prob);
+                    }
                 }
             }
         },
@@ -49,6 +57,7 @@ var funtimes = new Vue({
             if (this.currProbIndex > this.problems.length -1){
                 this.currProbIndex = 0;
             }
+            this.resetPracticeArea();
         },
 
         indexDown(){
@@ -56,7 +65,27 @@ var funtimes = new Vue({
             if (this.currProbIndex < 0 ){
                 this.currProbIndex = this.problems.length - 1;
             }
-        }
+            this.resetPracticeArea();
+        },
 
+        check(){
+            if (this.answer == '' || this.answer == ' ' || this.answer == "__") {
+                this.responseEmoji = "🤔";
+                console.log('space');
+            } else if (this.answer == this.problems[this.currProbIndex].product){
+                this.responseEmoji = "😄";
+                console.log('correct');
+            } else {
+                this.responseEmoji = "🙁";
+                console.log('incorrect');
+            }
+        },
+
+        resetPracticeArea(){
+            this.responseEmoji = "🤔";
+            this.answer = "";
+            document.getElementById("theanswer").focus();
+            this.errorMessage = '';
+        }
     }
 });

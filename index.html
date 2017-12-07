@@ -13,12 +13,12 @@
         <section class="section">
             <div class="container">
                 <h1 class="title has-text-centered">Fun Times!</h1>
-                <div class="columns" id="funtimes">
-                    <div class="column is-2 left-sidebar">
+                <div class="columns has-text-centered" id="funtimes">
+                    <div class="column is-1 left-sidebar">
                     </div>
 
                     <div class="column">
-                        <div class="tabs is-toggle is-toggle-rounded"><!-- start tabs -->
+                        <div class="tabs is-toggle is-centered"><!-- start tabs -->
                             <ul>
                                 <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }"><a>
                                     <span class="icon"><i class="fa fa-gear"></i></span>
@@ -31,10 +31,10 @@
                             </ul>
                         </div><!--end tabs -->
                         <!-- <transition name="fade"> -->
-                            <div v-if="mode === 'setup'" class="setup-area">
+                            <div v-if="mode === 'setup'" class="setup-area box">
                                 <div class="first-factor-selector">
                                     <div class="choose-factor-note"> I would like to practice multiplying each of these</br></div>
-                                    <div class="buttons factor-a has-addons">
+                                    <div class="buttons is-centered factor-a has-addons">
                                         <span @click="toggleInSet(0, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(0) > -1 }">0</span>
                                         <span @click="toggleInSet(1, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(1) > -1 }">1</span>
                                         <span @click="toggleInSet(2, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(2) > -1 }">2</span>
@@ -53,7 +53,7 @@
                                         
                                 <div class="second-factor-selector">
                                     <div class="choose-factor-note">by each of these</br></div>
-                                    <div class="buttons factor-b has-addons">
+                                    <div class="buttons is-centered factor-b has-addons">
                                         <span @click="toggleInSet(0, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(0) > -1 }">0</span>
                                         <span @click="toggleInSet(1, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(1) > -1 }">1</span>
                                         <span @click="toggleInSet(2, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(2) > -1 }">2</span>
@@ -72,12 +72,13 @@
                             </div>
                         <!-- </transition> -->
                         <!-- <transition name="fade"> -->
-                            <div v-if="mode === 'practice'" class="practice-area">
+                            <div v-if="mode === 'practice'" class="practice-area box">
                                 <span class="factor1">{{problems[currProbIndex].factor1}}</span>
                                 <span class="times">&times;</span>
                                 <span class="factor2">{{problems[currProbIndex].factor2}}</span>  
                                 <span class="equals">=</span>
-                                <span class="answer">{{problems[currProbIndex].product}}</span>
+                                <!-- <span class="answer">{{problems[currProbIndex].product}}</span> -->
+                                <input @keyup="check()" v-model="answer" type="text" class="answer" id="theanswer" placeholder="__">
                                 <div class="response">{{responseEmoji}}</div>
 
                                 <div class="controls">
@@ -85,10 +86,15 @@
                                     <span @click="indexUp()" class="button indexup">></span>
                                 </div>
                             </div>
+
+                            <div class="error">
+                                {{errorMessage}}
+                            </div>
+                            
                         <!-- </transition> -->
                     </div>
 
-                    <div class="column is-2 right-sidebar">
+                    <div class="column is-1 right-sidebar">
                     </div>
                 </div>             
             </div>
