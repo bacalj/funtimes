@@ -5,15 +5,14 @@ var funtimes = new Vue({
         setA: [],
         setB: [],
         problems: [],
-        factorA: 0,
-        factorB: 0,
+        currProbIndex: 0,
         responseEmoji: "🤔"
     },
 
     computed: {
-        answer: function(){
-            return this.factorA * this.factorB;
-        }
+        // answer: function(){
+        //     return this.problems[currProbIndex].factorA * this.problems[currProbIndex].factorB;
+        // }
     },
 
     methods: {
@@ -43,5 +42,6 @@ var funtimes = new Vue({
                 set.push(num);
             }
         }
+
     }
 });

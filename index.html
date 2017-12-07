@@ -73,9 +73,9 @@
                         <!-- </transition> -->
                         <!-- <transition name="fade"> -->
                             <div v-if="mode === 'practice'" class="practice-area">
-                                <span class="factor1">{{factorA}}</span>
+                                <span class="factor1">{{problems[currProbIndex].factor1}}</span>
                                 <span class="times">&times;</span>
-                                <span class="factor2">{{factorB}}</span>  
+                                <span class="factor2">{{problems[currProbIndex].factor2}}</span>  
                                 <span class="equals">=</span>
                                 <span class="answer">{{answer}}</span>
                                 <div class="response">{{responseEmoji}}</div>
