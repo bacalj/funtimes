@@ -52,6 +52,7 @@ var funtimes = new Vue({
         },
 
         indexDown(){
+            this.currProbIndex--;
             if (this.currProbIndex < 0 ){
                 this.currProbIndex = this.problems.length - 1;
             }
