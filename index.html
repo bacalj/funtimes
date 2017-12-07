@@ -82,10 +82,10 @@
                                 <div class="response">{{responseEmoji}}</div>
                             </div>
 
-                            <div class="controls">
-                                    <span @click="indexDown()" class="button indexdown"><</span>
-                                    <span @click="indexUp()" class="button indexup">></span><br>
-                                    <span @click="shuffle" class="button shuffle"></span>
+                            <div v-if="mode === 'practice'" class="controls">
+                                <span @click="indexDown()" class="button indexdown">previous card</span>
+                                <span @click="indexUp()" class="button indexup">next card</span><br>
+                                <span @click="shuffle" class="button shuffle">shuffle</span>
                             </div>
 
                             <div class="error">

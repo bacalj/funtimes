@@ -20,6 +20,7 @@ var funtimes = new Vue({
     methods: {
         setUp(){ 
             this.mode = 'setup';
+            this.problems = [];
         },
 
         practice(){
