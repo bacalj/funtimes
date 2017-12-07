@@ -29,6 +29,7 @@ var funtimes = new Vue({
                     prob.factor1 = this.setA[i];
                     prob.factor2 = this.setB[k];
                     prob.showProduct = false;
+                    prob.product = prob.factor1 * prob.factor2;
                     this.problems.push(prob);
                 }
             }
