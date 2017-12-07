@@ -79,6 +79,11 @@
                                 <span class="equals">=</span>
                                 <span class="answer">{{problems[currProbIndex].product}}</span>
                                 <div class="response">{{responseEmoji}}</div>
+
+                                <div class="controls">
+                                    <span @click="indexDown()" class="button indexdown"><</span>
+                                    <span @click="indexUp()" class="button indexup">></span>
+                                </div>
                             </div>
                         <!-- </transition> -->
                     </div>

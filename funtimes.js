@@ -42,6 +42,19 @@ var funtimes = new Vue({
             } else {
                 set.push(num);
             }
+        },
+
+        indexUp(){
+            this.currProbIndex++;
+            if (this.currProbIndex > this.problems.length -1){
+                this.currProbIndex = 0;
+            }
+        },
+
+        indexDown(){
+            if (this.currProbIndex < 0 ){
+                this.currProbIndex = this.problems.length - 1;
+            }
         }
 
     }
