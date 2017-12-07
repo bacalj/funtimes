@@ -8,7 +8,7 @@ var funtimes = new Vue({
         currProbIndex: 0,
         responseEmoji: "🤔",
         answer:'',
-        errorMessage:'foo'
+        errorMessage:''
     },
 
     computed: {
@@ -24,7 +24,7 @@ var funtimes = new Vue({
 
         practice(){
             if (this.setA.length < 1 || this.setB.length < 1 ){
-                this.errorMessage = 'Hey, you need to choose at least one factor to practice from each list';
+                this.errorMessage = 'Hey, you need to choose at least one factor to practice from each list.';
             } 
             
             else {
@@ -49,6 +49,9 @@ var funtimes = new Vue({
                 set.splice(indS, 1);
             } else {
                 set.push(num);
+            }
+            if (this.setA.length > 0 || this.setB.length > 0){
+                this.errorMessage = '';
             }
         },
 
