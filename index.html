@@ -32,10 +32,10 @@
                                 <div class="tabs is-toggle level-item">
                                     <ul>
                                         <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }"><a>
-                                            <span>Setup</span>
+                                            <span><i class="fa fa-gear"></i>Setup</span>
                                         </a></li>
                                         <li @click="practice()" :class="{ 'is-active' : mode === 'practice' }"><a>
-                                            <span>Practice</span>
+                                            <span><i class="fa fa-play-circle"></i>Practice</span>
                                         </a></li>
                                     </ul>
                                 </div>
@@ -87,14 +87,22 @@
                             <span class="times">&times;</span>
                             <span class="factor2">{{problems[currProbIndex].factor2}}</span>  
                             <span class="equals">=</span>
-                            <input @keyup="check()" v-model="answer" type="text" class="answer" id="theanswer" placeholder="__">
+                            <input @keyup="check()" v-model="answer" type="text" class="answer" id="theanswer" placeholder="__"><br>
                             <span class="response">{{responseEmoji}}</span>
                         </div>
 
-                        <div v-if="mode === 'practice'" class="controls controls-area">
-                            <button @click="indexDown()" class="button indexdown is-pulled-right">previous card</button>
-                            <button @click="indexUp()" class="button indexup is-pulled-right">next card</button>
-                            <button @click="shuffle" class="button shuffle is-pulled-left">shuffle</button>
+                        <div v-if="mode === 'practice'" class="controls controls-area level">
+                            <button @click="indexDown()" class="button level-item indexdown is-pulled-left">
+                                    <i class="fa fa-arrow-left"></i>previous
+                            </button>
+
+                            <button @click="shuffle" class="button level-item shuffle">
+                                    <i class="fa fa-random"></i>shuffle
+                            </button>
+
+                            <button @click="indexUp()" class="button level-item indexup is-pulled-right">
+                                    <i class="fa fa-arrow-right"></i>next
+                            </button>
                         </div>
 
                         <div class="error-area">

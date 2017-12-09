@@ -3,13 +3,46 @@
 $primary: #387CA1;
 @import "../node_modules/bulma/bulma";
 
+body {
+    min-height:1200px;
+    background: #3a7bd5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #3a6073, #3a7bd5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #3a6073, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
+}
 
 .card {
     padding:40px; 
  }
 
 .nav-area {
+    .title {
+        color:white;
+    }
 
+    .tabs {
+        li {
+            background:transparent;
+            border:transparent;
+            a {
+                border:transparent;
+                color:white;
+            }
+        }
+
+        li.is-active {
+            border:1px solid white;
+            background: transparent;
+            a {
+                background: transparent;
+            }
+        }
+    }
+
+    i.fa {
+        padding:4px;
+    }
 }
 
 .setup-area.card {
@@ -17,8 +50,8 @@ $primary: #387CA1;
         margin-bottom:20px;
     }
 
-    li.is-active a {
-        background-color: $primary !important; 
+    span.is-primary {
+        background: linear-gradient(to top, #3a6073, #3a7bd5);
     }
 
 }
@@ -32,5 +65,41 @@ $primary: #387CA1;
         height: 100px;
         border:0px;
         color:rgb(74,74,74);
+        &:focus{
+            outline-width: 0;
+        }
+    }
+
+    .response {
+        font-size:100px;
     }
 }
+
+.controls-area {
+    margin-top:12px;
+
+    .button {  
+        width:28%;
+        background-color: transparent;
+        border:0px;
+        outline-width: 0;
+        margin-top:20px;
+        color:white;
+    }
+
+    i.fa {
+        padding:4px;
+    }
+    
+    .fa-random {
+        position:relative;
+        top:2px;
+    }
+}
+
+.error-area {
+    padding-top:12px;
+    color:white;
+}
+
+

@@ -6466,14 +6466,42 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
+body {
+  min-height: 1200px;
+  background: #3a7bd5;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #3a6073, #3a7bd5);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #3a6073, #3a7bd5);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
 .card {
   padding: 40px; }
+
+.nav-area .title {
+  color: white; }
+
+.nav-area .tabs li {
+  background: transparent;
+  border: transparent; }
+  .nav-area .tabs li a {
+    border: transparent;
+    color: white; }
+
+.nav-area .tabs li.is-active {
+  border: 1px solid white;
+  background: transparent; }
+  .nav-area .tabs li.is-active a {
+    background: transparent; }
+
+.nav-area i.fa {
+  padding: 4px; }
 
 .setup-area.card .buttons {
   margin-bottom: 20px; }
 
-.setup-area.card li.is-active a {
-  background-color: #387CA1 !important; }
+.setup-area.card span.is-primary {
+  background: linear-gradient(to top, #3a6073, #3a7bd5); }
 
 .practice-area.card {
   font-size: 80px; }
@@ -6484,3 +6512,26 @@ label.panel-block {
     height: 100px;
     border: 0px;
     color: #4a4a4a; }
+    .practice-area.card #theanswer:focus {
+      outline-width: 0; }
+  .practice-area.card .response {
+    font-size: 100px; }
+
+.controls-area {
+  margin-top: 12px; }
+  .controls-area .button {
+    width: 28%;
+    background-color: transparent;
+    border: 0px;
+    outline-width: 0;
+    margin-top: 20px;
+    color: white; }
+  .controls-area i.fa {
+    padding: 4px; }
+  .controls-area .fa-random {
+    position: relative;
+    top: 2px; }
+
+.error-area {
+  padding-top: 12px;
+  color: white; }
