@@ -19,93 +19,89 @@
                     </div>
 
                     <div class="column main-column">
-                        <nav class="level">
-                                <!-- Left side -->
-                                <div class="level-left">
-                                    <div class="level-item">
-                                        <h1 class="title">Fun Times</h1>
-                                    </div>
-                                </div>
-                                
-                                <!-- Right side -->
-                                <div class="level-right">
-                                    <div class="tabs is-toggle level-item"><!-- start tabs -->
-                                        <ul>
-                                            <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }"><a>
-                                                <span>Setup</span>
-                                            </a></li>
-                                            <li @click="practice()" :class="{ 'is-active' : mode === 'practice' }"><a>
-                                                <span>Practice</span>
-                                            </a></li>
-                                        </ul>
-                                    </div><!--end tabs -->
-                                </div>
-                            </nav>     
-                        
-                        
-                        <!-- <transition name="fade"> -->
-                            <div v-if="mode === 'setup'" class="setup-area card">
-                                <div class="first-factor-selector">
-                                    <div class="choose-factor-note">Practice multiplying each of these</br></div>
-                                    <div class="buttons is-centered factor-a has-addons">
-                                        <span @click="toggleInSet(0, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(0) > -1 }">0</span>
-                                        <span @click="toggleInSet(1, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(1) > -1 }">1</span>
-                                        <span @click="toggleInSet(2, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(2) > -1 }">2</span>
-                                        <span @click="toggleInSet(3, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(3) > -1 }">3</span>
-                                        <span @click="toggleInSet(4, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(4) > -1 }">4</span>
-                                        <span @click="toggleInSet(5, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(5) > -1 }">5</span>
-                                        <span @click="toggleInSet(6, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(6) > -1 }">6</span>
-                                        <span @click="toggleInSet(7, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(7) > -1 }">7</span>
-                                        <span @click="toggleInSet(8, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(8) > -1 }">8</span>
-                                        <span @click="toggleInSet(9, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(9) > -1 }">9</span>
-                                        <span @click="toggleInSet(10, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(10) > -1 }">10</span>
-                                        <span @click="toggleInSet(11, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(11) > -1 }">11</span>
-                                        <span @click="toggleInSet(12, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(12) > -1 }">12</span>
-                                    </div>
-                                </div>
-                                        
-                                <div class="second-factor-selector">
-                                    <div class="choose-factor-note">by each of these</br></div>
-                                    <div class="buttons is-centered factor-b has-addons">
-                                        <span @click="toggleInSet(0, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(0) > -1 }">0</span>
-                                        <span @click="toggleInSet(1, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(1) > -1 }">1</span>
-                                        <span @click="toggleInSet(2, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(2) > -1 }">2</span>
-                                        <span @click="toggleInSet(3, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(3) > -1 }">3</span>
-                                        <span @click="toggleInSet(4, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(4) > -1 }">4</span>
-                                        <span @click="toggleInSet(5, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(5) > -1 }">5</span>
-                                        <span @click="toggleInSet(6, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(6) > -1 }">6</span>
-                                        <span @click="toggleInSet(7, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(7) > -1 }">7</span>
-                                        <span @click="toggleInSet(8, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(8) > -1 }">8</span>
-                                        <span @click="toggleInSet(9, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(9) > -1 }">9</span>
-                                        <span @click="toggleInSet(10, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(10) > -1 }">10</span>
-                                        <span @click="toggleInSet(11, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(11) > -1 }">11</span>
-                                        <span @click="toggleInSet(12, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(12) > -1 }">12</span>
-                                    </div>
-                                </div>    
-                            </div>
-                        <!-- </transition> -->
-                        <!-- <transition name="fade"> -->
-                            <div v-if="mode === 'practice'" class="practice-area card">
-                                <span class="factor1">{{problems[currProbIndex].factor1}}</span>
-                                <span class="times">&times;</span>
-                                <span class="factor2">{{problems[currProbIndex].factor2}}</span>  
-                                <span class="equals">=</span>
-                                <!-- <span class="answer">{{problems[currProbIndex].product}}</span> -->
-                                <input @keyup="check()" v-model="answer" type="text" class="answer" id="theanswer" placeholder="__">
-                                <span class="response">{{responseEmoji}}</span>
-                            </div>
 
-                            <div v-if="mode === 'practice'" class="controls">
-                                <button @click="indexDown()" class="button indexdown is-pulled-right">previous card</button>
-                                <button @click="indexUp()" class="button indexup is-pulled-right">next card</button>
-                                <button @click="shuffle" class="button shuffle is-pulled-left">shuffle</button>
-                            </div>
-
-                            <div class="error">
-                                {{errorMessage}}
+                        <nav class="level nav-area">
+                            <div class="level-left">
+                                <div class="level-item">
+                                    <h1 class="title">Fun Times</h1>
+                                </div>
                             </div>
                             
-                        <!-- </transition> -->
+                       
+                            <div class="level-right">
+                                <div class="tabs is-toggle level-item">
+                                    <ul>
+                                        <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }"><a>
+                                            <span>Setup</span>
+                                        </a></li>
+                                        <li @click="practice()" :class="{ 'is-active' : mode === 'practice' }"><a>
+                                            <span>Practice</span>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>     
+                        
+                        <div v-if="mode === 'setup'" class="setup-area card">
+                            <div class="first-factor-selector">
+                                <div class="choose-factor-note">Practice multiplying each of these</br></div>
+                                <div class="buttons is-centered factor-a has-addons">
+                                    <span @click="toggleInSet(0, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(0) > -1 }">0</span>
+                                    <span @click="toggleInSet(1, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(1) > -1 }">1</span>
+                                    <span @click="toggleInSet(2, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(2) > -1 }">2</span>
+                                    <span @click="toggleInSet(3, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(3) > -1 }">3</span>
+                                    <span @click="toggleInSet(4, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(4) > -1 }">4</span>
+                                    <span @click="toggleInSet(5, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(5) > -1 }">5</span>
+                                    <span @click="toggleInSet(6, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(6) > -1 }">6</span>
+                                    <span @click="toggleInSet(7, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(7) > -1 }">7</span>
+                                    <span @click="toggleInSet(8, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(8) > -1 }">8</span>
+                                    <span @click="toggleInSet(9, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(9) > -1 }">9</span>
+                                    <span @click="toggleInSet(10, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(10) > -1 }">10</span>
+                                    <span @click="toggleInSet(11, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(11) > -1 }">11</span>
+                                    <span @click="toggleInSet(12, setA)" class="button" :class="{ 'is-primary' : setA.indexOf(12) > -1 }">12</span>
+                                </div>
+                            </div>
+                                    
+                            <div class="second-factor-selector">
+                                <div class="choose-factor-note">by each of these</br></div>
+                                <div class="buttons is-centered factor-b has-addons">
+                                    <span @click="toggleInSet(0, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(0) > -1 }">0</span>
+                                    <span @click="toggleInSet(1, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(1) > -1 }">1</span>
+                                    <span @click="toggleInSet(2, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(2) > -1 }">2</span>
+                                    <span @click="toggleInSet(3, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(3) > -1 }">3</span>
+                                    <span @click="toggleInSet(4, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(4) > -1 }">4</span>
+                                    <span @click="toggleInSet(5, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(5) > -1 }">5</span>
+                                    <span @click="toggleInSet(6, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(6) > -1 }">6</span>
+                                    <span @click="toggleInSet(7, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(7) > -1 }">7</span>
+                                    <span @click="toggleInSet(8, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(8) > -1 }">8</span>
+                                    <span @click="toggleInSet(9, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(9) > -1 }">9</span>
+                                    <span @click="toggleInSet(10, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(10) > -1 }">10</span>
+                                    <span @click="toggleInSet(11, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(11) > -1 }">11</span>
+                                    <span @click="toggleInSet(12, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(12) > -1 }">12</span>
+                                </div>
+                            </div>    
+                        </div>
+    
+                        <div v-if="mode === 'practice'" class="practice-area card">
+                            <span class="factor1">{{problems[currProbIndex].factor1}}</span>
+                            <span class="times">&times;</span>
+                            <span class="factor2">{{problems[currProbIndex].factor2}}</span>  
+                            <span class="equals">=</span>
+                            <input @keyup="check()" v-model="answer" type="text" class="answer" id="theanswer" placeholder="__">
+                            <span class="response">{{responseEmoji}}</span>
+                        </div>
+
+                        <div v-if="mode === 'practice'" class="controls controls-area">
+                            <button @click="indexDown()" class="button indexdown is-pulled-right">previous card</button>
+                            <button @click="indexUp()" class="button indexup is-pulled-right">next card</button>
+                            <button @click="shuffle" class="button shuffle is-pulled-left">shuffle</button>
+                        </div>
+
+                        <div class="error-area">
+                            {{errorMessage}}
+                        </div>
+                            
+   
                     </div>
 
                     <div class="column is-2 right-sidebar">

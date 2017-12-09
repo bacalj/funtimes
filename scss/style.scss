@@ -1,46 +1,36 @@
-// 1. Import the initial variables
+//Import the initial variables, override then import remaining bulma modules you want
 @import "../node_modules/bulma/sass/utilities/initial-variables";
-
-// 2. update variables
 $primary: #387CA1;
-
-// 3. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
 
-// 4. the styling
 
-.practice-area {
+.card {
+    padding:40px; 
+ }
+
+.nav-area {
+
+}
+
+.setup-area.card {
+    .buttons {
+        margin-bottom:20px;
+    }
+
+    li.is-active a {
+        background-color: $primary !important; 
+    }
+
+}
+
+.practice-area.card {
     font-size:80px;
     #theanswer {
         border:0px;
+        font-size: 80px;
+        width: 130px;
+        height: 100px;
+        border:0px;
+        color:rgb(74,74,74);
     }
-}
-
-li.is-active a {
-    background-color: $primary !important; 
-}
-
-.answer {
-    font-size: 7px;
-    width: 130px;
-    height: 100px;
-    border:0px;
-    color:rgb(74,74,74);
-}
-
-.card {
-   padding:40px; 
-}
-
-.setup-area .buttons {
-    margin-bottom:20px;
-}
-
-input#theanswer {
-    color:rgb(84,84,84);
-    font-size: 80px;
-}
-
-.main-column {
-    //min-width:684px;
 }
