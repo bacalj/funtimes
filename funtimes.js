@@ -11,12 +11,6 @@ var funtimes = new Vue({
         errorMessage:''
     },
 
-    computed: {
-        // answer: function(){
-        //     return this.problems[currProbIndex].factorA * this.problems[currProbIndex].factorB;
-        // }
-    },
-
     methods: {
         setUp(){ 
             this.mode = 'setup';
