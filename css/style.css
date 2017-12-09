@@ -6466,26 +6466,27 @@ label.panel-block {
   background-color: whitesmoke;
   padding: 3rem 1.5rem 6rem; }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s; }
-
 .practice-area {
   font-size: 80px; }
   .practice-area #theanswer {
     border: 0px; }
 
 li.is-active a {
-  background-image: linear-gradient(to bottom, #387CA1 0%, #330867 100%); }
-
-.button.is-primary {
-  background-image: linear-gradient(to bottom, #387CA1 0%, #330867 100%); }
+  background-color: #387CA1 !important; }
 
 .answer {
-  font-size: 70px;
+  font-size: 7px;
   width: 130px;
   height: 100px;
   border: 0px;
   color: #4a4a4a; }
 
-.answer:focus {
-  outline: none; }
+.card {
+  padding: 40px; }
+
+.setup-area .buttons {
+  margin-bottom: 20px; }
+
+input#theanswer {
+  color: #545454;
+  font-size: 80px; }

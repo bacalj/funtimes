@@ -4,14 +4,10 @@
 // 2. update variables
 $primary: #387CA1;
 
-
 // 3. Import the rest of Bulma
 @import "../node_modules/bulma/bulma";
 
 // 4. the styling
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-}
 
 .practice-area {
     font-size:80px;
@@ -21,21 +17,30 @@ $primary: #387CA1;
 }
 
 li.is-active a {
-    background-image: linear-gradient(to bottom, #387CA1 0%, #330867 100%);   
-}
-
-.button.is-primary {
-    background-image: linear-gradient(to bottom, #387CA1 0%, #330867 100%);  
+    background-color: $primary !important; 
 }
 
 .answer {
-    font-size: 70px;
+    font-size: 7px;
     width: 130px;
     height: 100px;
     border:0px;
     color:rgb(74,74,74);
 }
 
-.answer:focus {
-    outline:none;
+.card {
+   padding:40px; 
+}
+
+.setup-area .buttons {
+    margin-bottom:20px;
+}
+
+input#theanswer {
+    color:rgb(84,84,84);
+    font-size: 80px;
+}
+
+.main-column {
+    //min-width:684px;
 }
