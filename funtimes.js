@@ -8,7 +8,8 @@ var funtimes = new Vue({
         currProbIndex: 0,
         responseEmoji: "🤔",
         answer:'',
-        errorMessage:''
+        errorMessage:'',
+        forceCorrect: false
     },
 
     methods: {
@@ -50,7 +51,7 @@ var funtimes = new Vue({
             }
         },
 
-        indexUp(){
+        incrementIt(){
             this.currProbIndex++;
             if (this.currProbIndex > this.problems.length -1){
                 this.currProbIndex = 0;
@@ -58,7 +59,7 @@ var funtimes = new Vue({
             this.resetPracticeArea();
         },
 
-        indexDown(){
+        decrementIt(){
             this.currProbIndex--;
             if (this.currProbIndex < 0 ){
                 this.currProbIndex = this.problems.length - 1;
@@ -66,17 +67,31 @@ var funtimes = new Vue({
             this.resetPracticeArea();
         },
 
+        indexUp(){
+            if ( this.forceCorrect == false ) {
+                this.incrementIt();
+            } 
+        },
+
+        indexDown(){
+            if ( this.forceCorrect == false ) {
+                this.decrementIt();
+            }
+        },
+
         check(){
             if (this.answer == '' || this.answer == ' ' || this.answer == "__") {
                 this.responseEmoji = "🤔";
-                console.log('space');
             } else if (this.answer == this.problems[this.currProbIndex].product){
                 this.responseEmoji = "😄";
-                console.log('correct');
             } else {
                 this.responseEmoji = "🙁";
-                console.log('incorrect');
             }
+            console.log(this.isCorrect());
+        },
+
+        isCorrect(){
+            return this.answer == this.problems[this.currProbIndex].product ? true : false;
         },
 
         shuffle(){

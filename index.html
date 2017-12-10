@@ -79,7 +79,12 @@
                                     <span @click="toggleInSet(11, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(11) > -1 }">11</span>
                                     <span @click="toggleInSet(12, setB)" class="button" :class="{ 'is-primary' : setB.indexOf(12) > -1 }">12</span>
                                 </div>
-                            </div>    
+                            </div>  
+                            
+                            <div class="force-correct-toggle">
+                                <input type="checkbox" id="force-correct-box" v-model="forceCorrect">
+                                <label for="force-correct-box">Require correct answer.</label>
+                            </div>
                         </div>
     
                         <div v-if="mode === 'practice'" class="practice-area card">
