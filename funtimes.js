@@ -71,11 +71,27 @@ var funtimes = new Vue({
             if ( this.forceCorrect == false ) {
                 this.incrementIt();
             } 
+
+            if ( this.forceCorrect == true && this.isCorrect() ){
+                this.incrementIt();
+            }
+
+            if ( this.forceCorrect == true && !this.isCorrect() ){
+                this.errorMessage = 'You need to get the right answer to go to the next card';
+            }
         },
 
         indexDown(){
             if ( this.forceCorrect == false ) {
                 this.decrementIt();
+            }
+
+            if ( this.forceCorrect == true && this.isCorrect() ){
+                this.decrementIt();
+            }
+
+            if ( this.forceCorrect == true && !this.isCorrect() ){
+                this.errorMessage = 'You need to get the right answer to go to the previous card';
             }
         },
 
@@ -87,7 +103,9 @@ var funtimes = new Vue({
             } else {
                 this.responseEmoji = "🙁";
             }
-            console.log(this.isCorrect());
+            if (this.isCorrect()){
+                this.errorMessage = '';
+            }
         },
 
         isCorrect(){
@@ -95,7 +113,17 @@ var funtimes = new Vue({
         },
 
         shuffle(){
-            this.problems.sort(() => Math.random() * 2 - 1);
+            if ( this.forceCorrect == false ){
+                this.problems.sort(() => Math.random() * 2 - 1);
+            }
+
+            if ( this.forceCorrect == true && this.isCorrect() ){
+                this.problems.sort(() => Math.random() * 2 - 1);
+            }
+
+            if (this.forceCorrect == true && !this.isCorrect() ){
+                this.errorMessage = "You cannot shuffle until you get the correct answer";
+            }
         },
 
         resetPracticeArea(){
@@ -119,7 +147,7 @@ var funtimes = new Vue({
 });
 
 window.addEventListener('keydown', function(e){
-    console.log(e.keyCode);
+    //console.log(e.keyCode);
     if ( e.keyCode == 39 || e.keyCode == 37 || e.keyCode == 13 ){
         funtimes.handleKeys(e);
     }
