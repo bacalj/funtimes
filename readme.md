@@ -1,10 +1,6 @@
 # funtimes
 
-- My daughter was supposed to be learning her times tables
-- I was supposed to be quizzing her with paper flashcards
-- Neither of us were thrilled with the arrangement
-
-So, I made this, which is helping a bit.
+- it's flashcards with emoji
 
 ## how to use it
 it's running here: https://bacalj.github.io/funtimes/
