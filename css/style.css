@@ -6561,3 +6561,11 @@ body {
   padding-top: 12px;
   color: white;
   color: red; }
+
+.credits-area {
+  background-color: transparent; }
+  .credits-area .navbar-item {
+    color: white; }
+  .credits-area i {
+    padding-left: 26px;
+    padding-right: 5px; }

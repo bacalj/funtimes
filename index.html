@@ -31,12 +31,23 @@
                             <div class="level-right">
                                 <div class="tabs is-toggle level-item">
                                     <ul>
-                                        <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }"><a>
-                                            <span><i class="fa fa-gear"></i>Setup</span>
-                                        </a></li>
-                                        <li @click="practice()" :class="{ 'is-active' : mode === 'practice' }"><a>
-                                            <span><i class="fa fa-play-circle"></i>Practice</span>
-                                        </a></li>
+                                        <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }">
+                                            <a>
+                                                <span><i class="fa fa-gear"></i>Setup</span>
+                                            </a>
+                                        </li>
+
+                                        <li @click="practice()" :class="{ 'is-active' : mode === 'practice' }">
+                                            <a>
+                                                <span><i class="fa fa-play-circle"></i>Practice</span>
+                                            </a>
+                                        </li>
+
+                                        <li @click="showInfoModal()">
+                                            <a>
+                                                <span><i class="fa fa-question-circle"></i>Info</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -123,5 +134,21 @@
             </div>
         </section>
         <script src="funtimes.js" charset="utf-8"></script>
+        <!-- <div class="navbar is-fixed-bottom credits-area">
+            <div class="navbar-start">
+                <div class="navbar-item">
+                    <small>
+                        Made with <a href="https://bulma.io/">Bulma</a> and <a href="https://vuejs.org/">Vue</a>
+                    </small>
+                </div>
+            </div>
+            
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <small><i class="fa fa-twitter"></i>Tweet</small>
+                    <small><i class="fa fa-envelope"></i>Email me</small>
+                </div>
+            </div>
+        </div> -->
     </body>
 </html>
