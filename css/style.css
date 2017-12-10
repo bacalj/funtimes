@@ -6511,6 +6511,19 @@ body {
 .setup-area.card span.is-primary {
   background: linear-gradient(to top, #2a5298, #1e3c72); }
 
+.setup-area.card input[type=checkbox] {
+  display: none; }
+
+.setup-area.card label:before {
+  font-family: FontAwesome;
+  content: "\f096";
+  display: inline-block;
+  position: relative;
+  left: -5px; }
+
+.setup-area.card input[type=checkbox]:checked + label:before {
+  content: "\f046"; }
+
 .practice-area.card {
   font-size: 80px; }
   .practice-area.card #theanswer {

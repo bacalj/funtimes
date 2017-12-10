@@ -71,6 +71,22 @@ body {
         background: linear-gradient(to top, #2a5298, #1e3c72);
     }
 
+    input[type=checkbox]{
+        display:none;
+    }
+
+   label:before {
+        font-family: FontAwesome;
+        content: "\f096";
+        display:inline-block;
+        position: relative;
+        left:-5px;
+    }
+
+    input[type=checkbox]:checked + label:before {
+        content: "\f046";
+    }
+
 }
 
 .practice-area.card {
