@@ -1,8 +1,6 @@
 # funtimes
 
-- My daughter was supposed to be learning her times tables
-- I was supposed to be quizzing her with paper flashcards
-- Neither of us were thrilled with the arrangement
+- it's flashcards with emoji
 
 So, I made this, which is helping a bit.
 
