@@ -2,18 +2,21 @@
 @import "../node_modules/bulma/sass/utilities/initial-variables";
 $primary: #387CA1;
 @import "../node_modules/bulma/bulma";
+$emojiyellow: #FFDD2A;
 
 body {
     min-height:1200px;
-    background: #3a7bd5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #3a6073, #3a7bd5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #3a6073, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    
+    // background: #3a7bd5;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to top, #3a6073, #3a7bd5);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to top, #3a6073, #3a7bd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #1e3c72;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
 }
 
 .card {
     padding:40px; 
+    margin-top:40px;
  }
 
 .nav-area {
@@ -29,6 +32,11 @@ body {
                 border:transparent;
                 color:white;
             }
+            &:hover {
+                i, a {
+                    color:$emojiyellow;
+                }
+            }
         }
 
         li.is-active {
@@ -37,6 +45,15 @@ body {
             a {
                 background: transparent;
             }
+            &:hover {
+                i, a {
+                    color:white;
+                }
+            }
+        }
+
+        li a:hover {
+            background: transparent;
         }
     }
 
@@ -51,7 +68,7 @@ body {
     }
 
     span.is-primary {
-        background: linear-gradient(to top, #3a6073, #3a7bd5);
+        background: linear-gradient(to top, #2a5298, #1e3c72);
     }
 
 }
@@ -85,10 +102,16 @@ body {
         outline-width: 0;
         margin-top:20px;
         color:white;
+        &:hover {
+            color:$emojiyellow;
+        }
     }
 
     i.fa {
         padding:4px;
+        &:hover {
+            color:$emojiyellow;
+        }
     }
     
     .fa-random {

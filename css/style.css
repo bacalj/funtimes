@@ -6468,15 +6468,16 @@ label.panel-block {
 
 body {
   min-height: 1200px;
-  background: #3a7bd5;
+  background: #1e3c72;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to top, #3a6073, #3a7bd5);
+  background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
   /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to top, #3a6073, #3a7bd5);
+  background: linear-gradient(to right, #2a5298, #1e3c72);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
 
 .card {
-  padding: 40px; }
+  padding: 40px;
+  margin-top: 40px; }
 
 .nav-area .title {
   color: white; }
@@ -6487,12 +6488,19 @@ body {
   .nav-area .tabs li a {
     border: transparent;
     color: white; }
+  .nav-area .tabs li:hover i, .nav-area .tabs li:hover a {
+    color: #FFDD2A; }
 
 .nav-area .tabs li.is-active {
   border: 1px solid white;
   background: transparent; }
   .nav-area .tabs li.is-active a {
     background: transparent; }
+  .nav-area .tabs li.is-active:hover i, .nav-area .tabs li.is-active:hover a {
+    color: white; }
+
+.nav-area .tabs li a:hover {
+  background: transparent; }
 
 .nav-area i.fa {
   padding: 4px; }
@@ -6501,7 +6509,7 @@ body {
   margin-bottom: 20px; }
 
 .setup-area.card span.is-primary {
-  background: linear-gradient(to top, #3a6073, #3a7bd5); }
+  background: linear-gradient(to top, #2a5298, #1e3c72); }
 
 .practice-area.card {
   font-size: 80px; }
@@ -6526,8 +6534,12 @@ body {
     outline-width: 0;
     margin-top: 20px;
     color: white; }
+    .controls-area .button:hover {
+      color: #FFDD2A; }
   .controls-area i.fa {
     padding: 4px; }
+    .controls-area i.fa:hover {
+      color: #FFDD2A; }
   .controls-area .fa-random {
     position: relative;
     top: 2px; }
