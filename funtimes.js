@@ -76,7 +76,7 @@ var funtimes = new Vue({
                 this.incrementIt();
             }
 
-            if ( this.forceCorrect == true && !this.isCorrect() ){
+            if ( this.forceCorrect == true && !this.isCorrect() && !this.answer == '' ){
                 this.errorMessage = 'You need to get the right answer to go to the next card';
             }
         },
@@ -90,7 +90,7 @@ var funtimes = new Vue({
                 this.decrementIt();
             }
 
-            if ( this.forceCorrect == true && !this.isCorrect() ){
+            if ( this.forceCorrect == true && !this.isCorrect() && !this.answer == ''){
                 this.errorMessage = 'You need to get the right answer to go to the previous card';
             }
         },
@@ -103,7 +103,12 @@ var funtimes = new Vue({
             } else {
                 this.responseEmoji = "🙁";
             }
+
             if (this.isCorrect()){
+                this.errorMessage = '';
+            }
+
+            if (!this.isCorrect() && this.answer == '' || this.answer == ' ' || this.answer == "__"){
                 this.errorMessage = '';
             }
         },
