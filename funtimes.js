@@ -88,6 +88,24 @@ var funtimes = new Vue({
             this.answer = "";
             document.getElementById("theanswer").focus();
             this.errorMessage = '';
-        }
+        },
+
+        handleKeys(e){
+            if ( e.keyCode == 39 || e.keyCode == 13 ){
+                this.indexUp();
+            }
+
+            if ( e.keyCode == 37 ){
+                this.indexDown();
+            }
+        },
+
+    }
+});
+
+window.addEventListener('keydown', function(e){
+    console.log(e.keyCode);
+    if ( e.keyCode == 39 || e.keyCode == 37 || e.keyCode == 13 ){
+        funtimes.handleKeys(e);
     }
 });
