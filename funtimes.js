@@ -9,7 +9,8 @@ var funtimes = new Vue({
         responseEmoji: "🤔",
         answer:'',
         errorMessage:'',
-        forceCorrect: false
+        forceCorrect: false,
+        modal: 'notShowing'
     },
 
     methods: {
@@ -147,6 +148,14 @@ var funtimes = new Vue({
                 this.indexDown();
             }
         },
+
+        showInfoModal(){
+            this.modal = 'isShowing';
+        },
+
+        hideInfoModal(){
+            this.modal = 'notShowing';
+        }
 
     }
 });

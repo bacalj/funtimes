@@ -109,29 +109,37 @@
 
                         <div v-if="mode === 'practice'" class="controls controls-area level">
                             <button @click="indexDown()" class="button level-item indexdown is-pulled-left">
-                                    <i class="fa fa-arrow-left"></i>previous
+                                <i class="fa fa-arrow-left"></i>previous
                             </button>
 
                             <button @click="shuffle" class="button level-item shuffle">
-                                    <i class="fa fa-random"></i>shuffle
+                                <i class="fa fa-random"></i>shuffle
                             </button>
 
                             <button @click="indexUp()" class="button level-item indexup is-pulled-right">
-                                    <i class="fa fa-arrow-right"></i>next
+                                <i class="fa fa-arrow-right"></i>next
                             </button>
                         </div>
 
                         <div class="error-area">
                             {{errorMessage}}
-                        </div>
-                            
-   
+                        </div>   
                     </div>
 
                     <div class="column is-2 right-sidebar">
                     </div>
-                </div>             
-            </div>
+
+                    <div class="modal info-area" v-bind:class="{ 'is-active' : modal === 'isShowing' }">
+                        <div class="modal-background"></div>
+                            <div class="modal-content">
+                                <div class="card">
+                                    info here
+                                </div>
+                            </div>
+                        <button class="modal-close is-large" @click="hideInfoModal()" aria-label="close"></button>
+                    </div>
+                </div>        
+            </div><!-- end app -->
         </section>
         <script src="funtimes.js" charset="utf-8"></script>
         <!-- <div class="navbar is-fixed-bottom credits-area">
