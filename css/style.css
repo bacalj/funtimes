@@ -6569,3 +6569,18 @@ body {
   .credits-area i {
     padding-left: 26px;
     padding-right: 5px; }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  margin: 0 auto;
+  background: transparent;
+  color: white; }
+  .footer a {
+    color: white; }
+    .footer a:hover {
+      color: #FFDD2A; }
+  .footer i {
+    padding: 6px; }
