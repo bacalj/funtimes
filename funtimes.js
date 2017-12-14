@@ -38,7 +38,6 @@ var funtimes = new Vue({
                     }
                 }
             }
-
         },
 
         toggleInSet: function(num, set){
@@ -160,6 +159,17 @@ var funtimes = new Vue({
             this.modal = 'notShowing';
         }
 
+    },
+
+    watch: {
+        /* must be a more vue-y way to do this */
+        mode: function(val){
+            if (val == 'practice'){
+                setTimeout(function(){ 
+                    document.getElementById('theanswer').focus();
+                }, 500);
+            }
+        }
     }
 });
 
