@@ -121,13 +121,15 @@ var funtimes = new Vue({
         shuffle(){
             if ( this.forceCorrect == false ){
                 this.problems.sort(() => Math.random() * 2 - 1);
+                this.resetPracticeArea();
             }
 
             if ( this.forceCorrect == true && this.isCorrect() ){
                 this.problems.sort(() => Math.random() * 2 - 1);
+                this.resetPracticeArea();
             }
 
-            if (this.forceCorrect == true && !this.isCorrect() ){
+            else if (this.forceCorrect == true && !this.isCorrect() ){
                 this.errorMessage = "You cannot shuffle until you get the correct answer";
             }
         },
