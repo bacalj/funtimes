@@ -9,7 +9,8 @@ var funtimes = new Vue({
         responseEmoji: "🤔",
         answer:'',
         errorMessage:'',
-        forceCorrect: false
+        forceCorrect: false,
+        modal: 'notShowing'
     },
 
     methods: {
@@ -76,7 +77,7 @@ var funtimes = new Vue({
                 this.incrementIt();
             }
 
-            if ( this.forceCorrect == true && !this.isCorrect() && !this.answer == '' ){
+            else if ( this.forceCorrect == true && !this.isCorrect() ){
                 this.errorMessage = 'You need to get the right answer to go to the next card';
             }
         },
@@ -90,7 +91,7 @@ var funtimes = new Vue({
                 this.decrementIt();
             }
 
-            if ( this.forceCorrect == true && !this.isCorrect() && !this.answer == ''){
+            else if ( this.forceCorrect == true && !this.isCorrect() && !this.answer == ''){
                 this.errorMessage = 'You need to get the right answer to go to the previous card';
             }
         },
@@ -120,13 +121,15 @@ var funtimes = new Vue({
         shuffle(){
             if ( this.forceCorrect == false ){
                 this.problems.sort(() => Math.random() * 2 - 1);
+                this.resetPracticeArea();
             }
 
             if ( this.forceCorrect == true && this.isCorrect() ){
                 this.problems.sort(() => Math.random() * 2 - 1);
+                this.resetPracticeArea();
             }
 
-            if (this.forceCorrect == true && !this.isCorrect() ){
+            else if (this.forceCorrect == true && !this.isCorrect() ){
                 this.errorMessage = "You cannot shuffle until you get the correct answer";
             }
         },
@@ -147,6 +150,14 @@ var funtimes = new Vue({
                 this.indexDown();
             }
         },
+
+        showInfoModal(){
+            this.modal = 'isShowing';
+        },
+
+        hideInfoModal(){
+            this.modal = 'notShowing';
+        }
 
     }
 });

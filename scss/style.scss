@@ -142,4 +142,35 @@ body {
     color:red;
 }
 
+.credits-area {
+    background-color: transparent;
+    .navbar-item {
+        color:white;
+    }
 
+    i {
+        padding-left:26px;
+        padding-right:5px;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    margin: 0 auto;
+    background: transparent;
+    color:white;
+    a {
+        color:white;
+        &:hover {
+            color:$emojiyellow;
+        }
+    }
+
+    i {
+        padding:6px;
+    }
+
+}

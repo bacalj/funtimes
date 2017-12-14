@@ -31,12 +31,23 @@
                             <div class="level-right">
                                 <div class="tabs is-toggle level-item">
                                     <ul>
-                                        <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }"><a>
-                                            <span><i class="fa fa-gear"></i>Setup</span>
-                                        </a></li>
-                                        <li @click="practice()" :class="{ 'is-active' : mode === 'practice' }"><a>
-                                            <span><i class="fa fa-play-circle"></i>Practice</span>
-                                        </a></li>
+                                        <li @click="setUp()" :class="{ 'is-active' : mode === 'setup' }">
+                                            <a>
+                                                <span><i class="fa fa-gear"></i>Setup</span>
+                                            </a>
+                                        </li>
+
+                                        <li @click="practice()" :class="{ 'is-active' : mode === 'practice' }">
+                                            <a>
+                                                <span><i class="fa fa-play-circle"></i>Practice</span>
+                                            </a>
+                                        </li>
+
+                                        <li @click="showInfoModal()">
+                                            <a>
+                                                <span><i class="fa fa-question-circle"></i>Help</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -98,30 +109,58 @@
 
                         <div v-if="mode === 'practice'" class="controls controls-area level">
                             <button @click="indexDown()" class="button level-item indexdown is-pulled-left">
-                                    <i class="fa fa-arrow-left"></i>previous
+                                <i class="fa fa-arrow-left"></i>previous
                             </button>
 
                             <button @click="shuffle" class="button level-item shuffle">
-                                    <i class="fa fa-random"></i>shuffle
+                                <i class="fa fa-random"></i>shuffle
                             </button>
 
                             <button @click="indexUp()" class="button level-item indexup is-pulled-right">
-                                    <i class="fa fa-arrow-right"></i>next
+                                <i class="fa fa-arrow-right"></i>next
                             </button>
                         </div>
 
                         <div class="error-area">
                             {{errorMessage}}
-                        </div>
-                            
-   
+                        </div>   
                     </div>
 
                     <div class="column is-2 right-sidebar">
                     </div>
-                </div>             
-            </div>
+
+                    <div class="modal info-area" v-bind:class="{ 'is-active' : modal === 'isShowing' }">
+                        <div class="modal-background"></div>
+                            <div class="modal-content">
+                                <div class="card">
+                                    <h3 class="title text-left">How to set it up</h3>
+                                    <p>Let's say you want to "practice your sevens up to nine." You would do this:</p>
+                                    <img width="70%" style="margin:0 auto;" src="sevens.png" alt="an image of the settings">
+                                    <p>Then just click "Practice"</p>
+                                    <p>You can move from card to card with the arrow keys on your keyboard</p>
+
+                                    <h2 class="title text-left">How to set it up</h2>
+                                    <p>Let's say you want to "practice your sevens up to nine." You would do this:</p>
+                                    <img width="70%" style="margin:0 auto;" src="sevens.png" alt="an image of the settings">
+                                    <p>Then just click "Practice"</p>
+                                    <p>You can move from card to card with the arrow keys on your keyboard</p>
+                                </div>
+                            </div>
+                        <button class="modal-close is-large" @click="hideInfoModal()" aria-label="close"></button>
+                    </div>
+                </div>     
+            </div><!-- end app -->
         </section>
         <script src="funtimes.js" charset="utf-8"></script>
+        <footer class="footer">
+                <div class="container">
+                    <div class="content has-text-centered">
+                        <p>
+                            <span> <a href="https://twitter.com/joe_bacal"><i class="fa fa-twitter"></i></a></span>
+                            <span><a href="https://github.com/bacalj/funtimes"><i class="fa fa-github"></i></a></span>
+                        </p>
+                    </div>
+                </div>
+            </footer>
     </body>
 </html>
