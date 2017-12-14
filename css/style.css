@@ -6570,6 +6570,9 @@ body {
     padding-left: 26px;
     padding-right: 5px; }
 
+.info-area .card p {
+  font-weight: bold; }
+
 .footer {
   position: absolute;
   bottom: 0;
