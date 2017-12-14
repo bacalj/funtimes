@@ -2,8 +2,8 @@ var funtimes = new Vue({
     el: '#funtimes',
     data: {
         mode: 'setup',
-        setA: [0, 1, 2],
-        setB: [1, 2, 3],
+        setA: [2, 3],
+        setB: [1, 2, 3, 4],
         problems: [],
         currProbIndex: 0,
         responseEmoji: "🤔",
