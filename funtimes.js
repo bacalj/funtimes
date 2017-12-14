@@ -38,6 +38,7 @@ var funtimes = new Vue({
                     }
                 }
             }
+
         },
 
         toggleInSet: function(num, set){
