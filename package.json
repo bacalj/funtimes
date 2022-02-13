@@ -23,6 +23,6 @@
   "homepage": "https://github.com/bacalj/funtimes#readme",
   "dependencies": {
     "bulma": "^0.6.1",
-    "node-sass": "^4.7.2"
+    "node-sass": "^7.0.0"
   }
 }
